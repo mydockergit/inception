@@ -13,7 +13,7 @@ dind='jpetazzo/dind'
 # until I get bored and finally run your command.
 dive() {
     if (( DINCEPTION_DEPTH-- > 0 )); then
-        dive run --rm --privileged -ti -e LOG=file "$dind" docker "$@"
+        dive run --rm --privileged -ti -e LOG=file "$dind" wrapdocker docker "$@"
     else
         exec docker "$@"
     fi
